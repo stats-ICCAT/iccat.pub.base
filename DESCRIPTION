@@ -1,11 +1,11 @@
 Package: iccat.pub.base
 Type: Package
-Title: TBD
+Title: ICCAT public base libraries
 Version: 0.1.0
 Author: ICCAT Secretariat
 Maintainer: Fabio Fiorellato <fabio.fiorellato@iccat.int>
-Description: TBD
-    TBD.
+Description: A collection of utility functions to perform some (general interest) low-level tasks.
+    For the time being it only includes logging facilities.
 License: TBD
 Encoding: UTF-8
 LazyData: true
