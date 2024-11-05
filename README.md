@@ -21,13 +21,7 @@ Logging is currently done on the **standard error** channel, with log messages h
 [ yyyy/MM/dd HH:mm:ss ] : [ < severity > ] : { < prefix (when provided) > } : < message >
 ```
 
-> Only log messages of a severity level equal to or higher than the current log level set for the session will be effectively emitted**.
-
-*Shorthand functions* exist (`DEBUG`, `INFO`, `WARN`, `ERROR`) that do *implicitly* assign a severity level and therefore only expect a message and an optional prefix to work, e.g.:
-
-```
-INFO(text = "Log message")
-```
+> Only log messages of a severity level **equal to** or **higher than** the current log level set for the session will be effectively emitted.
 
 ## External dependencies (CRAN) <a name="external_deps"></a>
 None
@@ -103,5 +97,12 @@ will return:
 ```
 [1] "INFO"
 ```
+
+> *Shorthand functions* exist (`DEBUG`, `INFO`, `WARN`, `ERROR`) that do *implicitly* assign a severity level and therefore only expect a message and an optional prefix to work, e.g.:
+
+```
+INFO(text = "Log message")
+```
+
 
 or the actual logging level set for the session.
