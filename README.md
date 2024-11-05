@@ -2,9 +2,9 @@
 
 A set of general-purpose functions meant for public usage.
 
-Currently only includes logging facilities which allow outputting (to screen) messages with different levels of severity.
+Currently only includes [logging facilities](#logging_facilities) which allow outputting (to screen) messages with different levels of severity.
 
-## Logging facilities
+## Logging facilities <a name="logging_facilities"></a>
 
 There are four distinct log severity levels, and namely:
 
