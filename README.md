@@ -4,14 +4,6 @@ A set of general-purpose functions meant for public usage.
 
 Currently only includes logging facilities which allow outputting (to screen) messages with different levels of severity.
 
-## External dependencies (CRAN)
-None
-
-## Internal dependencies
-None
-
-# Usage
-
 ## Logging facilities
 
 There are four distinct log severity levels, and namely:
@@ -23,39 +15,46 @@ There are four distinct log severity levels, and namely:
 
 in **ascending** severity order.
 
-The current severity level for a session can be set using the `set_log_level` function by providing the label corresponding to the chosen level. E.g.:
-
-```
-set_log_level(LOG_WARN) # To set 'warning' as minimum severity level for messages to appear on the log
-```
-
-will return:
-
-```
-Log level: WARN
-```
-
-Accordingly, the severity level for the current session can be read using the `get_log_level` function. E.g.
-
-```
-get_log_level()
-```
-
-will return:
-
-```
-[1] "INFO"
-```
-
-or the actual logging level set for the session.
-
 Logging is currently done on the **standard error** channel, with log messages having the following structure:
 
 ```
 [ yyyy/MM/dd HH:mm:ss ] : [ < severity > ] : { < prefix (when provided) > } : < message >
 ```
 
-**Only log messages of a severity level equal to or higher than the current log level set for the session will be effectively emitted**.
+> Only log messages of a severity level equal to or higher than the current log level set for the session will be effectively emitted**.
+
+*Shorthand functions* exist (`DEBUG`, `INFO`, `WARN`, `ERROR`) that do *implicitly* assign a severity level and therefore only expect a message and an optional prefix to work, e.g.:
+
+```
+INFO(text = "Log message")
+```
+
+## External dependencies (CRAN) <a name="external_deps"></a>
+None
+
+## Internal dependencies <a name="internal_deps"></a>
+None
+
+# Building the library
+
+Assuming that all [external](#external_deps) and [internal](#internal_deps) dependencies are already installed in the R environment, and that the `devtools` package and [RTools](https://cran.r-project.org/bin/windows/Rtools/) are both available, the building process can be either started within R studio by selecting the Build > Build Source Package menu entry:
+
+![image](https://github.com/user-attachments/assets/f209d8d4-568c-4200-bcf2-fb1fa0e1d2ef)
+
+or by executing the following statement:
+
+`devtools::document(roclets = c('rd', 'collate', 'namespace'))`
+
+# Examples
+
+## Loading the library
+
+For the examples to work, the following statement should be executed only once per session:
+
+```
+library(iccat.pub.base)
+```
+## Generic logging function
 
 The generic logging function (`log_`) can be invoked by providing: a **severity level**, a **message**, and an *optional* **prefix**, e.g.:
 
@@ -81,9 +80,28 @@ that will emit:
 [ 2024-11-05 11:35:56 ] : [ INFO ] : { Prefix } : Log message
 ```
 
-*Shorthand functions* exist (`DEBUG`, `INFO`, `WARN`, `ERROR`) that do *implicitly* assign a severity level and therefore only expect a message and an optional prefix to work, e.g.:
+## Changing log severity level for the current R session
 
 ```
-INFO(text = "Log message")
+set_log_level(LOG_WARN) # To set 'warning' as minimum severity level for messages to appear on the log
 ```
 
+will return:
+
+```
+Log level: WARN
+```
+
+## Showing the current R session log severity level
+
+```
+get_log_level()
+```
+
+will return:
+
+```
+[1] "INFO"
+```
+
+or the actual logging level set for the session.
