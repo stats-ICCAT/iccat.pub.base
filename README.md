@@ -1,4 +1,4 @@
-# ICCAT base public library
+# ICCAT `base` `public` library
 
 A set of general-purpose functions meant for public usage.
 
