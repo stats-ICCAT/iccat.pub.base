@@ -43,7 +43,7 @@ or by executing the following statement:
 
 ## Loading the library
 
-For the examples to work, the following statement should be executed only once per session:
+For the examples to work, the following statement should be executed once per session:
 
 ```
 library(iccat.pub.base)
