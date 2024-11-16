@@ -1,4 +1,4 @@
-# ICCAT `base` `public` library
+R# ICCAT `base` `public` library
 
 A set of general-purpose functions meant for public usage.
 
@@ -17,7 +17,7 @@ in **ascending** severity order.
 
 Logging is currently done on the **standard error** channel, with log messages having the following structure:
 
-```
+```R
 [ yyyy/MM/dd HH:mm:ss ] : [ < severity > ] : { < prefix (when provided) > } : < message >
 ```
 
@@ -45,14 +45,14 @@ or by executing the following statement:
 
 For the examples to work, the following statement should be executed once per session:
 
-```
+```R
 library(iccat.pub.base)
 ```
 ## Generic logging function
 
 The generic logging function (`log_`) can be invoked by providing: a **severity level**, a **message**, and an *optional* **prefix**, e.g.:
 
-```
+```R
 log_(severity = LOG_INFO, text = "Log message") # No prefix specified
 ```
 
@@ -64,7 +64,7 @@ that will emit:
 
 if the current log level is `INFO` or above, or
 
-```
+```R
 log_(severity = LOG_INFO, text = "Log message", prefix = "Prefix") # To specify a custom prefix
 ```
 
@@ -76,7 +76,7 @@ that will emit:
 
 ## Changing log severity level for the current R session
 
-```
+```R
 set_log_level(LOG_WARN) # To set 'warning' as minimum severity level for messages to appear on the log
 ```
 
@@ -88,7 +88,7 @@ Log level: WARN
 
 ## Showing the current R session log severity level
 
-```
+```R
 get_log_level()
 ```
 
@@ -100,9 +100,8 @@ will return:
 
 > *Shorthand functions* exist (`DEBUG`, `INFO`, `WARN`, `ERROR`) that do *implicitly* assign a severity level and therefore only expect a message and an optional prefix to work, e.g.:
 
-```
+```R
 INFO(text = "Log message")
 ```
-
 
 or the actual logging level set for the session.
