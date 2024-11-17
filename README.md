@@ -37,7 +37,9 @@ Assuming that all [external](#external_deps) and [internal](#internal_deps) depe
 
 or by executing the following statement:
 
-`devtools::document(roclets = c('rd', 'collate', 'namespace'))`
+```R
+devtools::document(roclets = c('rd', 'collate', 'namespace'))
+```
 
 # Examples
 
@@ -58,7 +60,7 @@ log_(severity = LOG_INFO, text = "Log message") # No prefix specified
 
 that will emit:
 
-```
+```R
 [ 2024-11-05 11:35:56 ] : [ INFO ] : Log message
 ```
 
@@ -70,7 +72,7 @@ log_(severity = LOG_INFO, text = "Log message", prefix = "Prefix") # To specify 
 
 that will emit:
 
-```
+```R
 [ 2024-11-05 11:35:56 ] : [ INFO ] : { Prefix } : Log message
 ```
 
@@ -82,7 +84,7 @@ set_log_level(LOG_WARN) # To set 'warning' as minimum severity level for message
 
 will return:
 
-```
+```R
 Log level: WARN
 ```
 
@@ -94,7 +96,7 @@ get_log_level()
 
 will return:
 
-```
+```R
 [1] "INFO"
 ```
 
