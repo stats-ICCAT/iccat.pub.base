@@ -32,11 +32,11 @@ None
 # Installing the library from GitHub
 
 1) Ensure that all dependencies (both [external](#external_deps) and [internal](#internal_deps)) are installed
-2) Ensure that the `devtools` package is installed, if not
+2) Ensure that the `devtools` package is installed, if not, execute the following:
 ```R
 install.packages("devtools")
 ```
-3) Execute the following script:
+3) Once `devtools` is available, execute the following:
 ```R
 library(devtools)
 
