@@ -29,6 +29,20 @@ None
 ## Internal dependencies <a name="internal_deps"></a>
 None
 
+# Installing the library from GitHub
+
+1) Ensure that all dependencies (both [external](#external_deps) and [internal](#internal_deps)) are installed
+2) Ensure that the `devtools` package is installed, if not
+```R
+install.packages("devtools")
+```
+3) Execute the following script:
+```R
+library(devtools)
+
+install_github("stats-ICCAT/iccat.pub.base", dependencies = FALSE)
+```
+
 # Building the library
 
 Assuming that all [external](#external_deps) and [internal](#internal_deps) dependencies are already installed in the R environment, and that the `devtools` package and [RTools](https://cran.r-project.org/bin/windows/Rtools/) are both available, the building process can be either started within R studio by selecting the Build > Build Source Package menu entry:
